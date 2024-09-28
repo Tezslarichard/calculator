@@ -30,3 +30,9 @@ function square(){
         display.value="Error";
     }
 }
+
+// Törlés gomb
+
+function deleteLastValue() {
+    display.value = display.value.slice(0, -1);
+  }
