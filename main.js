@@ -12,22 +12,20 @@ function clearDisplay(){
 }
 
 // Kifejezés kiszámítása
-function calculate(){
-    try{
-        display.value = eval(display.value);  // Eredmény kiiratása
-    }
-    catch(error) {
-        display.value = "Error"; // Hiba esetén
+function calculate() {
+    try {
+        const expression = display.value.replace(/²/g, '**2');
+        display.value = eval(expression);
+    } catch (error) {
+        display.value = "Error";
     }
 }
 
 // Négyzetre emelés
-
-function square(){
-    try{
-        display.value = eval(display.value)**2;
-    }catch(error){
-        display.value="Error";
+function square() {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value += "²";
     }
 }
 
@@ -36,3 +34,4 @@ function square(){
 function deleteLastValue() {
     display.value = display.value.slice(0, -1);
   }
+
