@@ -22,3 +22,11 @@ function calculate(){
 }
 
 // Négyzetre emelés
+
+function square(){
+    try{
+        display.value = eval(display.value)**2;
+    }catch(error){
+        display.value="Error";
+    }
+}
